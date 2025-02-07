@@ -49,4 +49,10 @@ function updateContent() {
       .catch(error => console.error('Error fetching data:', error));
   
   }
-  
+
+  //event listener for button click
+  document.getElementById("myBtn").addEventListener("click", displayDate);
+
+function displayDate() {
+  document.getElementById("demo").innerHTML = Date();
+}
