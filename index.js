@@ -32,3 +32,21 @@ function register() {
     x.style.opacity = 0;
     y.style.opacity = 1;
 }
+
+//dynamic content updates
+function updateContent() {
+
+    fetch('/api/getLatestData') // Fetch data from server
+  
+      .then(response => response.json())
+  
+      .then(data => {
+  
+        document.getElementById('news-feed').innerHTML = data.news; // Update content on page
+  
+      })
+  
+      .catch(error => console.error('Error fetching data:', error));
+  
+  }
+  
